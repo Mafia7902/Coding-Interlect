@@ -1,0 +1,12 @@
+R,r
+Q,q
+K,k
+O,o
+N,n
+S,s
+E,e
+F,f
+V,v
+G,g,D,d,J,j,T,t,M,m,P,p,A,a,C,c,L,l,Y,y,B,b,I,i,H,h,W,w,U,u,X,x,Z,z
+Each line consists of the instructions for a single spaceship. In this case there are 10 spaceships. spaceship 1 visited Crate A then base a, spaceship 2 visited Crate B then base b, spaceship 3 visited Crate C then base c, spaceship 4 visited Crate D then base d, spaceship 5 visited Crate E then base e, spaceship 6 visited Crate F then base f, spaceship 7 visited Crate G then base g, spaceship 8 visited Crate H then base h, spaceship 9 visited Crate I then base i, spaceship 10 visited Crate J then base j,  spaceship 10 visited Crate K then base k, spaceship 10 visited Crate L then base l, spaceship 10 visited Crate M then base m, spaceship 10 visited Crate N then base n, spaceship 10 visited Crate O then base o, spaceship 10 visited Crate P then base p, spaceship 10 visited Crate Q then base q, spaceship 10 visited Crate R then base r, spaceship 10 visited Crate S then base s, spaceship 10 visited Crate T then base t, spaceship 10 visited Crate U then base u, spaceship 10 visited Crate V then base v, spaceship 10 visited Crate W then base w, spaceship 10 visited Crate X then base x, spaceship 10 visited Crate Y then base y, spaceship 10 visited Crate Z then base z. The total Manhattan distance travelled is 4256.
+The final score is 4256. 
