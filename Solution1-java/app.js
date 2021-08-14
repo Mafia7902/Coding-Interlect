@@ -31,16 +31,16 @@ var loopCount = coodrs.length
 var baseDistances = allDistances(currentPos,coodrs)
 var shipCount = 0
 
-console.log(baseDistances);
+//console.log(baseDistances);
 
 while (shipCount<Number_ships) {
-    // console.log(baseDistances);
+    //console.log(baseDistances);
     for (let i = 0; i < loopCount; i++) {
-
+        console.log('Currently at: '+ currentPos);
         var disCount = 0
         //console.log('current position: '+currentPos);
         //console.log(distTravell);
-        distTravell = baseDistances
+       // distTravell = baseDistances
         
         
 
@@ -51,22 +51,30 @@ while (shipCount<Number_ships) {
         }
         indexOfSmall = baseDistances.indexOf(smallestTravel)
         currentPos = coodrs[baseDistances.indexOf(smallestTravel)]
-        //
+        
+        var pos = coodrs[baseDistances.indexOf(smallestTravel)]
+
+        currentPos = pos.map(i=>Number(i));
+        
+        distTravell = allDistances(currentPos, coodrs)
+        console.log(distTravell);
 
         for (let i = 0; i < distTravell.length; i++) {
+            console.log(distTravell[i] + " > " + baseDistances[i]);
             if (distTravell[i]>baseDistances[i]) {
                 disCount++
             }
         }
         
-        if (disCount==baseDistances.length) {
+        console.log("dc"+disCount);
+        console.log("bd"+baseDistances.length);
+        if (disCount===baseDistances.length) {
             x=loopCount
             break
         }else{
             coodrs.splice(indexOfSmall,1)
             baseDistances.splice(indexOfSmall,1)
         }
-        console.log('Currently at: '+ currentPos);
         
     }
     shipCount++
