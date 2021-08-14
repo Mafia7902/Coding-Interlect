@@ -13,6 +13,7 @@ var Number_ships = data.ships();
 var qoutas = data.qoutas();
 var coodrs = []
 var currentPos = [0, 0, 0]
+var order = []
 //console.log(Number_ships)
 //console.log(`Material: ${Material}, Ship Capacity: ${Ship_Capacity}, labs: ${labs}, Number of ships: ${Number_ships}, Quotas: ${qoutas}`)
 
@@ -22,6 +23,13 @@ for (let i = 0; i < resources[0].length; i++) {
     r1.shift()
     coodrs.push(r1)
 }
+
+
+
+
+console.log(resources);
+
+console.log(resources[0].includes("-11,25,-33"))
 
 //console.log(coodrs);
 
@@ -34,6 +42,7 @@ var shipCount = 0
 //console.log(baseDistances);
 
 while (shipCount<Number_ships) {
+    var saves = []
     //console.log(baseDistances);
     for (let i = 0; i < loopCount; i++) {
         console.log('Currently at: '+ currentPos);
@@ -54,7 +63,7 @@ while (shipCount<Number_ships) {
         
         var pos = coodrs[baseDistances.indexOf(smallestTravel)]
 
-        currentPos = pos.map(i=>Number(i));
+        
         
         distTravell = allDistances(currentPos, coodrs)
         console.log(distTravell);
@@ -74,9 +83,12 @@ while (shipCount<Number_ships) {
         }else{
             coodrs.splice(indexOfSmall,1)
             baseDistances.splice(indexOfSmall,1)
+            var save = searchCoords(currentPos)
+            saves.push(save)
         }
         
     }
+    order.push(saves)
     shipCount++
     console.log("next ship added");
 }
@@ -89,3 +101,22 @@ function allDistances(currentPos, travelTo) {
     }
     return distances
 }
+
+
+function searchCoords(coodrs) {
+    var destination = []
+    resources[0].forEach(element => {
+        element.split(",")
+        if (element.indexOf(coodrs[0])>0) {
+            if (element.indexOf(coodrs[1])>0) {
+                if (element.indexOf(coodrs[2])>0) {
+                    destination.push(element)
+                }
+            }
+        }
+    });
+    
+    return destination
+}
+
+console.log(order);
